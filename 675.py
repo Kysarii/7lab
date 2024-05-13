@@ -163,7 +163,7 @@ def validate_n():
     if not 4 <= n <= nmax:
         showwarning(title="Предупреждение", message=f"Количество точек должно быть больше 4 и меньше {nmax}")
     else:
-        resize_and_center(350, 400)
+        resize_and_center(350, 425)
         create_entry_fields(n)
 
 
