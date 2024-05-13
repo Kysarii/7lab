@@ -6,15 +6,18 @@ from tkinter.scrolledtext import ScrolledText
 nmax = 10
 
 def square(a, b, c, d):
-    s1 = (a['x'] - b['x']) ** 2 + (a['y'] - b['y']) ** 2
-    s2 = (a['x'] - c['x']) ** 2 + (a['y'] - c['y']) ** 2
-    s3 = (a['x'] - d['x']) ** 2 + (a['y'] - d['y']) ** 2
-    s4 = (b['x'] - c['x']) ** 2 + (b['y'] - c['y']) ** 2
-    s5 = (b['x'] - d['x']) ** 2 + (b['y'] - d['y']) ** 2
-    s6 = (c['x'] - d['x']) ** 2 + (c['y'] - d['y']) ** 2
-    return ((s1 == s3) and (s1 == s4) and (s1 == s6) and (s2 == s5) and (s2 == 2 * s1)) \
-        or ((s1 == s2) and (s1 == s5) and (s1 == s6) and (s3 == s4) and (s3 == 2 * s1)) \
-        or ((s2 == s3) and (s2 == s4) and (s2 == s5) and (s1 == s6) and (s1 == 2 * s2))
+    if a == b and a == c and a == d and b == c and b == d and c == d:
+        return False
+    else:
+        s1 = (a['x'] - b['x']) ** 2 + (a['y'] - b['y']) ** 2
+        s2 = (a['x'] - c['x']) ** 2 + (a['y'] - c['y']) ** 2
+        s3 = (a['x'] - d['x']) ** 2 + (a['y'] - d['y']) ** 2
+        s4 = (b['x'] - c['x']) ** 2 + (b['y'] - c['y']) ** 2
+        s5 = (b['x'] - d['x']) ** 2 + (b['y'] - d['y']) ** 2
+        s6 = (c['x'] - d['x']) ** 2 + (c['y'] - d['y']) ** 2
+        return ((s1 == s3) and (s1 == s4) and (s1 == s6) and (s2 == s5) and (s2 == 2 * s1)) \
+            or ((s1 == s2) and (s1 == s5) and (s1 == s6) and (s3 == s4) and (s3 == 2 * s1)) \
+            or ((s2 == s3) and (s2 == s4) and (s2 == s5) and (s1 == s6) and (s1 == 2 * s2))
 
 def find_square_alg(t, n):
     s_list = []
